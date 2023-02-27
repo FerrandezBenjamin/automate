@@ -13,12 +13,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('groupe_id');
+            $table->foreign('groupe_id')
+                ->references('id')
+                ->on('groupe')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->rememberToken();
             $table->timestamps();
         });
