@@ -10,4 +10,9 @@ class GroupeController extends Controller
     {
         return view('group.liste_groupe');
     }
+
+    function add_groupe()
+    {
+        return view('group.add_groupe');
+    }
 }

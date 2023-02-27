@@ -8,5 +8,5 @@
 @section('content')
 
 <div class="container">
-    Liste
+    Formulaire création d'ajout de groupe
 </div>

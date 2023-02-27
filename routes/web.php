@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/groupe', [GroupeController::class, 'index']);
+Route::get('/groupe/liste', [GroupeController::class, 'index']);
+Route::get('/groupe/add', [GroupeController::class, 'add_groupe']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
