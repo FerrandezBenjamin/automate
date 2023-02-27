@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\GroupeController;
+use App\Http\Controllers\GroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,9 @@ Route::get('/', [HomeController::class, 'index'])
     ->middleware(['auth'])
     ->name('home');
 
-Route::get('/groupe/liste', [GroupeController::class, 'index']);
-Route::get('/groupe/ajout', [GroupeController::class, 'ajout_groupe']);
+Route::get('/groupe/nouveau', [GroupController::class, 'new'])
+    ->name('group.new');
+Route::get('/groupe/aleatoire', [GroupController::class, 'random'])
+    ->name('group.random');
 
 require __DIR__ . '/auth.php';
