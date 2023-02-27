@@ -416,9 +416,15 @@
             .liste>li>a {
                 background-color: white;
                 padding: 10px;
-                color: dark !important;
-                border-radius: 12px;
+                color: black;
+                border-radius: 3px;
 
+            }
+
+            .liste>li>a:hover {
+                transition: 0.1s;
+                background-color: #374149;
+                /* background-color: blue; */
             }
         }
     </style>
