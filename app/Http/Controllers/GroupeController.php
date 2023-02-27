@@ -11,8 +11,8 @@ class GroupeController extends Controller
         return view('group.liste_groupe');
     }
 
-    function add_groupe()
+    function ajout_groupe()
     {
-        return view('group.add_groupe');
+        return view('group.ajout_groupe');
     }
 }

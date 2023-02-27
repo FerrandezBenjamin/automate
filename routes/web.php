@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/groupe/liste', [GroupeController::class, 'index']);
-Route::get('/groupe/add', [GroupeController::class, 'add_groupe']);
+Route::get('/groupe/ajout', [GroupeController::class, 'ajout_groupe']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

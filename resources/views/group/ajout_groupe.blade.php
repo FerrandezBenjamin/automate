@@ -10,3 +10,5 @@
 <div class="container">
     Formulaire création d'ajout de groupe
 </div>
+
+@endsection

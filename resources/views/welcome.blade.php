@@ -458,8 +458,7 @@
             <h1> App Gwendal - Benjamin </h1>
             <div class="liste">
                 <li><a href="/groupe/liste"> Liste des groupes </a></li>
-                <li><a href="/groupe/add"> Ajouter un groupe </a></li>
-                <li><a href="/groupe/random"> Groupe aléatoire </a></li>
+                <li><a href="/groupe/liste"> Liste des utilisateurs</a></li>
             </div>
         </div>
 
