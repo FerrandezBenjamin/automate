@@ -15,7 +15,9 @@ use App\Http\Controllers\GroupeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
+Route::get('/', [HomeController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('home');
 
 Route::get('/groupe/liste', [GroupeController::class, 'index']);
 Route::get('/groupe/ajout', [GroupeController::class, 'ajout_groupe']);
