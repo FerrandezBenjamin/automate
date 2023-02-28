@@ -20,12 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('groupe_id');
-            $table->foreign('groupe_id')
+            $table->foreignId('groupe_id')->nullable()->constrained()
                 ->references('id')
-                ->on('groupe')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->on('groupe');
             $table->rememberToken();
             $table->timestamps();
         });
