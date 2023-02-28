@@ -3,33 +3,51 @@
 @section('title', 'Liste des groupes')
 
 @section('content')
-<div class="container">
+<div class="allContainer">
 
-    <div class="containerCard">
-        @foreach ($allGroupe as $groupe)
-        <div class="card">
-            <label for="card1"></label>
-            <div class="cardContainer">
-                <h2> {{$groupe->name}} </h2>
-                <div class="dataCard">
-                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit
-                        Itaque eos impedit doloremque possimus ea odio, similique dicta ad
-                        est quae maiores officia repellendus nostrum facilis eaquNihil, quam placeat.e temporibus!
-                    </span>
-                </div>
-                <div class="join">
-                    <form action="groupe/join">
-                        <input type="hidden" name="groupeID" value="{{$groupe->id}}" />
-                        <input type="hidden" name="userID" value="{{$user->id}}" />
-                        <a href="{{url('groupe/join')}}">
-                            <button type="submit">Rejoindre ce groupe !</button>
-                        </a>
-                    </form>
+    <div class="container">
+
+        <div class="containerCard">
+            @foreach ($allGroupe as $groupe)
+            <div class="card">
+                <label for="card1"></label>
+                <div class="cardContainer">
+                    <h2> {{$groupe->name}} </h2>
+                    <div class="dataCard">
+                        @foreach($groupe->userInGroupe as $userInGroupe)
+                        @if($userInGroupe->name == $user->name)
+                        <p style="color:blue">{{$userInGroupe->name}}</p>
+                        @else
+                        <p>{{$userInGroupe->name}}</p>
+                        @endif
+                        @endforeach
+                    </div>
+                    <div class="join">
+                        <form action="groupe/join">
+                            <input type="hidden" name="groupeID" value="{{$groupe->id}}" />
+                            <input type="hidden" name="userID" value="{{$user->id}}" />
+                            <a href="{{url('groupe/join')}}">
+                                <button type="submit">Rejoindre ce groupe !</button>
+                            </a>
+                        </form>
+                    </div>
                 </div>
             </div>
+            @endforeach
+
         </div>
-        @endforeach
     </div>
+
+    <div class="containerNoGroupe">
+
+        <h2>Liste des personnes sans groupe</h2>
+        <div class="containerInNoGroupe">
+            @foreach($userWithoutGroupe as $noGroupeUser)
+            <span>{{$noGroupeUser->name}}</span>
+            @endforeach
+        </div>
+    </div>
+
 
 
 

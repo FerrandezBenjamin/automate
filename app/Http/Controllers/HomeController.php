@@ -15,10 +15,13 @@ class HomeController extends Controller
         $user = Auth::user();
         $allUser = User::all();
         $allGroupe = Groupe::all();
+        $userWithoutGroupe = Groupe::noGroupeUser();
+
         return view('home', compact(
             'user',
             'allUser',
-            'allGroupe'
+            'allGroupe',
+            'userWithoutGroupe',
         ));
     }
 }
