@@ -24,6 +24,7 @@ Route::get('/groupe/nouveau', [GroupController::class, 'new'])
 
 //Entrer dans un groupe 
 Route::get('/groupe/join', [GroupController::class, 'join']);
+Route::get('/groupe/quit', [GroupController::class, 'quit']);
 
 Route::get('/groupe/aleatoire', [GroupController::class, 'random'])
     ->name('group.random');

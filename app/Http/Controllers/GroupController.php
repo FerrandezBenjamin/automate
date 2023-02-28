@@ -33,4 +33,18 @@ class GroupController extends Controller
 
         return back()->with('message', 'Vous avez rejoins le groupe !');
     }
+
+    function quit(Request $req)
+    {
+        $values = $req->validate([
+            'userID' => 'required'
+        ]);
+
+        if ($user = User::find($values['userID'])) {
+            $user->groupe_id = null;
+            $user->update();
+        };
+
+        return back()->with('message', 'Vous avez quitté le groupe !');
+    }
 }

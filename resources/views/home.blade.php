@@ -10,7 +10,6 @@
         <div class="containerCard">
             @foreach ($allGroupe as $groupe)
             <div class="card">
-                <label for="card1"></label>
                 <div class="cardContainer">
                     <h2> {{$groupe->name}} </h2>
                     <div class="dataCard">
@@ -23,13 +22,23 @@
                         @endforeach
                     </div>
                     <div class="join">
+                        @if($user->groupe_id == $groupe->id)
+                        <form action="groupe/quit">
+                            <input type="hidden" name="userID" value="{{$user->id}}" />
+                            <a class="quit" href="{{url('groupe/quit')}}">
+                                <button type="submit" class="btn btn-quit">Quitter !</button>
+                            </a>
+                        </form>
+                        @else
                         <form action="groupe/join">
                             <input type="hidden" name="groupeID" value="{{$groupe->id}}" />
                             <input type="hidden" name="userID" value="{{$user->id}}" />
-                            <a href="{{url('groupe/join')}}">
-                                <button type="submit">Rejoindre ce groupe !</button>
+                            <a class="join" href="{{url('groupe/join')}}">
+                                <button type="submit" class="btn btn-join">Rejoindre ce groupe !</button>
                             </a>
                         </form>
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -43,7 +52,12 @@
         <h2>Liste des personnes sans groupe</h2>
         <div class="containerInNoGroupe">
             @foreach($userWithoutGroupe as $noGroupeUser)
-            <span>{{$noGroupeUser->name}}</span>
+            @if($noGroupeUser->name == $user->name)
+            <p style="color:blue">{{$noGroupeUser->name}}</p>
+            @else
+            <p>{{$noGroupeUser->name}}</p>
+            @endif
+
             @endforeach
         </div>
     </div>
