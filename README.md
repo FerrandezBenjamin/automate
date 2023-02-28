@@ -15,7 +15,7 @@
 ## Make controller, model view
 - php artisan make:controller [name]
 - php artisan make:model [name]
-- php artisan make:view
+- php artisan make:view [name]
 
 
 
