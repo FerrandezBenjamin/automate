@@ -6,7 +6,7 @@
 @section('content')
 
 <div class="container">
-    Join
+    
 </div>
 
 @endsection

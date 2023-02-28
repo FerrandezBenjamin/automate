@@ -13,9 +13,10 @@ class Groupe extends Migration
      */
     public function up()
     {
-        Schema::create('groupe', function (Blueprint $table) {
+        Schema::create('groupes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->timestamps();
         });
     }
 
