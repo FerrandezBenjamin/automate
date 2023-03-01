@@ -22,6 +22,33 @@
 
         <!-- Page Content -->
         <main>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+
+                @if ($errors->any())
+                    <div class="container-error">
+                        <div class="error" role="alert">
+                            <p class="mb-0">{{$errors->first()}}</p>
+                        </div>
+                @endif
+
+                @if(Session::get('message'))
+                    <div class="container-great">
+                        <div class="great" role="alert">
+                            <p class="mb-0">{{Session::get('message')}}</p>
+                        </div>
+                    </div>
+                @endif
+
+                    @yield('content')
+                </div>
+
+            </div>
+        </div>
+
+
+
+
             @yield('content')
         </main>
     </div>

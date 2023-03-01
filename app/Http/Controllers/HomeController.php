@@ -12,8 +12,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
-        $allUser = User::all();
+
+        $user      = Auth::user();
+        $allUser   = User::all();
         $allGroupe = Groupe::all();
         $userWithoutGroupe = Groupe::noGroupeUser();
 

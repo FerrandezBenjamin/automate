@@ -16,16 +16,17 @@
                         {{ __('Accueil') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('group.new')" :active="request()->routeIs('group.new')">
-                        {{ __('Nouveau groupe') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('group.random')" :active="request()->routeIs('group.random')">
-                        {{ __('Groupe aléatoire') }}
-                    </x-nav-link>
-                </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('group.new')" :active="request()->routeIs('group.new')">
+                            {{ __('Nouveau groupe') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('group.random')" :active="request()->routeIs('group.random')">
+                            {{ __('Groupe aléatoire') }}
+                        </x-nav-link>
+                    </div>
             </div>
 
             <!-- Settings Dropdown -->

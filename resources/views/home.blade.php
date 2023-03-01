@@ -14,17 +14,18 @@
                     <h2> {{$groupe->name}} </h2>
                     <div class="dataCard">
                         @foreach($groupe->userInGroupe as $userInGroupe)
-                        @if($userInGroupe->name == $user->name)
-                        <p style="color:blue">{{$userInGroupe->name}}</p>
-                        @else
-                        <p>{{$userInGroupe->name}}</p>
-                        @endif
+                            @if($userInGroupe->name == $user->name)
+                                <p style="color:blue">{{$userInGroupe->name}}</p>
+                            @else
+                                <p>{{$userInGroupe->name}}</p>
+                            @endif
                         @endforeach
                     </div>
                     <div class="join">
                         @if($user->groupe_id == $groupe->id)
                         <form action="groupe/quit">
                             <input type="hidden" name="userID" value="{{$user->id}}" />
+                            <input type="hidden" name="groupeID" value="{{$groupe->id}}" />
                             <a class="quit" href="{{url('groupe/quit')}}">
                                 <button type="submit" class="btn btn-quit">Quitter !</button>
                             </a>

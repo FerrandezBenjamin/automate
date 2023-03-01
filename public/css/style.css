@@ -116,3 +116,32 @@
 .btn-join {
     background-color: rgb(22, 165, 41);
 }
+
+.container-error {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top:30px;
+    background-color: rgb(60 57 88);
+    color:rgb(191 176 176);
+    max-height: 80px;
+}
+
+.container-great {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top:30px;
+    background-color:rgb(22 165 41 / 63%);
+    color:white;
+    max-height: 80px;
+}
+
+.error,
+.great {
+    letter-spacing: 1px;
+    margin-left:8%;
+    margin-bottom:18px;
+}
