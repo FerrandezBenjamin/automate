@@ -1,11 +1,25 @@
-## Start Laravel
-- php artisan serve
+## DONT FORGET TO CREAT .env
+ • fill :
+    DB_DATABASE=nameofbdd
+    DB_USERNAME=userNameBdd
+    DB_PASSWORD=psswdOfBdd
+
+## Do this after download app
+- npm install
+- npm run dev
+- composer update
+- composer dump-autoload
+- php artisan key:generate
+- php artisan optimize:clear
 
 ## Make db
 - php artisan migrate 
 
 ## Seed User DB 
 - php artisan db:seed
+
+## Start Laravel App
+- php artisan serve
 
 ## Optimize route or something
 - php artisan optimize:clear
