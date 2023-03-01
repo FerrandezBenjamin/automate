@@ -17,6 +17,6 @@ class Groupe extends Model
 
     public static function noGroupeUser()
     {
-        return User::whereNull('groupe_id')->orderBy('role', 'ASC')->get();
+        return User::whereNull('groupe_id')->get();
     }
 }

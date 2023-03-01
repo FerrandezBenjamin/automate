@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $allUser = User::orderBy('role', 'ASC')->get();
+        $allUser = User::all()  ;
         $allGroupe = Groupe::all();
         $userWithoutGroupe = Groupe::noGroupeUser();
 
