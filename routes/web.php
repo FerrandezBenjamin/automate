@@ -23,17 +23,19 @@ Route::get('/', [HomeController::class, 'index'])
 Route::middleware(['auth', 'role:administrator'])->group(function () {
 
     Route::get('/groupe/nouveau', [GroupController::class, 'new'])
-    ->name('group.new');
+        ->name('group.new');
 
     Route::get('/groupe/aleatoire', [GroupController::class, 'random'])
-    ->name('group.random');
+        ->name('group.random');
+});
 
+Route::middleware(['auth', 'role:user'])->group(function () {
     //Entrer dans un groupe 
     Route::get('/groupe/join', [GroupController::class, 'join'])
-    ->name('joingroupe');
+        ->name('joingroupe');
 
     Route::get('/groupe/quit', [GroupController::class, 'quit'])
-    ->name('quitegroupe');
+        ->name('quitegroupe');
 });
 
 require __DIR__ . '/auth.php';
