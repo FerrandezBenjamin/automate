@@ -57,4 +57,16 @@ class AdminController extends Controller
 
         return back()->with('message', 'Le groupe a bien été supprimé.');
     }
+
+    public function admin_delete_user(Request $req)
+    {
+        $values = $req->validate([
+            'userID' => 'required'
+        ]);
+
+        if ($user = User::find($values['userID']))
+            $user->delete();
+
+        return back()->with('message', "L'utilisateur a bien été supprimé.");
+    }
 }

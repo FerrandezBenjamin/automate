@@ -29,12 +29,10 @@
                     <td>Pas de groupe</td>
                     @endif
                     <td>
-                        <form action="delete_groupe">
+                        <form action="{{url("/admin/delete_user")}}" method="POST">
+                            @csrf
                             <input type="hidden" name="userID" value="{{$user->id}}" />
-
-                            <a class="btn_2 btn-quit-2" href="{{ route('admin.user_delete') }}">
-                                <button type="submit">Supprimer !</button>
-                            </a>
+                            <button class="btn_2 btn-quit-2" type="submit">Supprimer !</button>
                         </form>
 
                     </td>

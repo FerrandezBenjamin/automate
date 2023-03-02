@@ -24,12 +24,10 @@
                     <td>{{$groupe->name}}</td>
                     <td>{!! $groupe->userInGroupe->count() !!}</td>
                     <td>
-                        <form action="delete_groupe">
+                        <form action="{{url("/admin/delete_groupe")}}" method="POST">
+                            @csrf
                             <input type="hidden" name="groupeID" value="{{$groupe->id}}" />
-
-                            <a class="btn_2 btn-quit-2" href="{{ route('admin.group_delete') }}">
-                                <button type="submit">Supprimer !</button>
-                            </a>
+                            <button class="btn_2 btn-quit-2" type="submit">Supprimer !</button>
                         </form>
 
                     </td>

@@ -39,11 +39,8 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::get('/admin/groupe_aleatoire', [AdminController::class, 'admin_groupe_random'])
         ->name('admin.random_groupe');
 
-    Route::get('/admin/delete_groupe', [AdminController::class, 'admin_delete_groupe'])
-        ->name('admin.group_delete');
-
-    Route::get('/admin/delete_user', [AdminController::class, 'admin_delete_user'])
-        ->name('admin.user_delete');
+    Route::post('/admin/delete_groupe', [AdminController::class, 'admin_delete_groupe']);
+    Route::post('/admin/delete_user', [AdminController::class, 'admin_delete_user']);
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
