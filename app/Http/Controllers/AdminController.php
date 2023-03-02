@@ -21,19 +21,21 @@ class AdminController extends Controller
 
     public function admin_user()
     {
-        $allUser = User::all();
+        $allUsers = User::all();
+        $allGroupes = Groupe::all();
         return view('admin.gestion_user', compact(
-            'allUser'
+            'allGroupes',
+            'allUsers'
         ));
     }
 
     public function admin_gestion_groupe()
     {
-        $allUser = User::orderBy('name', 'ASC')->orderBy('groupe_id', 'ASC')->get();
+        $allUsers = User::orderBy('name', 'ASC')->orderBy('groupe_id', 'ASC')->get();
         $allGroupes = Groupe::all();
         return view('admin.gestion_groupe', compact(
             'allGroupes',
-            'allUser',
+            'allUsers',
         ));
     }
 
@@ -68,5 +70,17 @@ class AdminController extends Controller
             $user->delete();
 
         return back()->with('message', "L'utilisateur a bien été supprimé.");
+    }
+
+    public function admin_assign_groupe_to_user(Request $req)
+    {
+        $values = $req->validate([
+            'userID' => 'required',
+            'groupeID' => 'required'
+        ]);
+
+        dd($values);
+
+        return back()->with('message', "L'utilisateur a désormais un groupe.");
     }
 }

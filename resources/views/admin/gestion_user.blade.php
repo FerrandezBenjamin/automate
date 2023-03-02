@@ -20,14 +20,26 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($allUser as $user)
+                @foreach ($allUsers as $user)
                 <tr>
                     <td>{{$user->name}}</td>
-                    @if($user->groupe !== null)
-                    <td>{!! $user->groupe->name !!}</td>
-                    @else
-                    <td>Pas de groupe</td>
-                    @endif
+                    <td>
+                        <form action="{{url("/admin/assign_groupe")}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="userID" value="{{$user->id}}" />
+                            <select name="groupeID" class="selectGroupe">
+                                @foreach($allGroupes as $groupe)
+                                @if($user->groupe !== null)
+                                <option value="{{$groupe->id}}" {!! $groupe->id == $user->groupe->id ? 'selected' : '' !!}>{{$groupe->name}}</option>
+                                @else
+                                <option value="{{$groupe->id}}">{{$groupe->name}}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </form>
+                    </td>
+
+
                     <td>
                         <form action="{{url("/admin/delete_user")}}" method="POST">
                             @csrf

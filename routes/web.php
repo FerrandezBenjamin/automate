@@ -41,6 +41,7 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
 
     Route::post('/admin/delete_groupe', [AdminController::class, 'admin_delete_groupe']);
     Route::post('/admin/delete_user', [AdminController::class, 'admin_delete_user']);
+    Route::post('/admin/assign_groupe', [AdminController::class, 'admin_assign_groupe_to_user']);
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
