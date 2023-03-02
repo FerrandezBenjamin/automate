@@ -27,6 +27,9 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
 
     Route::get('/groupe/aleatoire', [GroupController::class, 'random'])
         ->name('group.random');
+
+    Route::get('/groupe/gestion', [GroupController::class, 'gestion'])
+        ->name('group.gestion');
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
