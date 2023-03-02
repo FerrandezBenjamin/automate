@@ -9,28 +9,10 @@ use App\Models\User;
 
 class GroupController extends Controller
 {
-    function new()
-    {
-        return view('admin.new_groupe');
-    }
 
-    function random()
-    {
 
-        return view('group.random', compact(
-            '',
-        ));
-    }
 
-    function gestion()
-    {
-        $allGroupes = Groupe::all();
-        return view('admin.gestion', compact(
-            'allGroupes',
-        ));
-    }
-
-    function join(Request $req)
+    public function join_groupe(Request $req)
     {
         $values = $req->validate([
             'groupeID' => 'required',
@@ -50,7 +32,7 @@ class GroupController extends Controller
         }
     }
 
-    function quit(Request $req)
+    public function quite_groupe(Request $req)
     {
         $values = $req->validate([
             'userID' => 'required',
@@ -68,16 +50,5 @@ class GroupController extends Controller
         } else {
             return back()->withError('Le groupe est inconnu');
         }
-    }
-
-    function delete_groupe(Request $req)
-    {
-        $values = $req->validate([
-            'groupeID' => 'required'
-        ]);
-
-        Groupe::find($values['groupeID'])->deleteCascade();
-
-        return back()->with('message', 'Le groupe a bien été supprimé.');
     }
 }

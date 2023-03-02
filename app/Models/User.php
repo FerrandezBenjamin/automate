@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Groupe;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -52,5 +54,10 @@ class User extends Authenticatable
     public function name()
     {
         return $this->name;
+    }
+
+    public function groupe()
+    {
+        return $this->hasOne(Groupe::class, "id", "groupe_id");
     }
 }

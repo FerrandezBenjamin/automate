@@ -29,4 +29,9 @@ class Groupe extends Model
 
         $this->delete();
     }
+
+    public function name()
+    {
+        return $this->name;
+    }
 }

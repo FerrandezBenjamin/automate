@@ -66,8 +66,8 @@ li {
 }
 
 .tableGroupe {
-    margin: 10% auto;
-    width: 80%;
+    margin: 3% auto;
+    width: 60%;
     height: 19%;
     background-color: rgba(200, 201, 218, 0.99);
     border-radius: 15px;
@@ -79,7 +79,7 @@ th {
     border-bottom: 2px solid grey;
     padding: 15px;
     width: 50%;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 td {
@@ -295,4 +295,23 @@ tr {
 .titlePage {
     color: white;
 }
+
+
+.containerOnAdmin {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(228, 233, 236);
+}
+
+.titleOnContainerAdmin {
+    padding: 10px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-decoration: underline; */
 }
