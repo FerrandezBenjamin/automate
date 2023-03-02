@@ -19,4 +19,14 @@ class Groupe extends Model
     {
         return User::whereNull('groupe_id')->get();
     }
+
+    public function deleteCascade()
+    {
+        foreach ($this->userInGroupe as $user) {
+            $user->groupe_id = null;
+            $user->update();
+        }
+
+        $this->delete();
+    }
 }

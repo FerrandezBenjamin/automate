@@ -11,17 +11,23 @@ class GroupController extends Controller
 {
     function new()
     {
-        return view('group.new');
+        return view('admin.new_groupe');
     }
 
     function random()
     {
-        return view('group.random');
+
+        return view('group.random', compact(
+            '',
+        ));
     }
 
     function gestion()
     {
-        return view('group.gestion');
+        $allGroupes = Groupe::all();
+        return view('admin.gestion', compact(
+            'allGroupes',
+        ));
     }
 
     function join(Request $req)
@@ -62,5 +68,16 @@ class GroupController extends Controller
         } else {
             return back()->withError('Le groupe est inconnu');
         }
+    }
+
+    function delete_groupe(Request $req)
+    {
+        $values = $req->validate([
+            'groupeID' => 'required'
+        ]);
+
+        Groupe::find($values['groupeID'])->deleteCascade();
+
+        return back()->with('message', 'Le groupe a bien été supprimé.');
     }
 }

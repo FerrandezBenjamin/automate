@@ -11,6 +11,7 @@
             </div> --}}
 
             <!-- Navigation Links -->
+
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                     {{ __('Accueil') }}
@@ -18,20 +19,11 @@
             </div>
 
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('group.new')" :active="request()->routeIs('group.new')">
-                    {{ __('Nouveau groupe') }}
+                <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                    {{ __('Administration') }}
                 </x-nav-link>
             </div>
-            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('group.random')" :active="request()->routeIs('group.random')">
-                    {{ __('Groupe aléatoire') }}
-                </x-nav-link>
-            </div>
-            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('group.gestion')" :active="request()->routeIs('group.random')">
-                    {{ __('Gestionnaire des groupes') }}
-                </x-nav-link>
-            </div>
+
         </div>
 
         <!-- Settings Dropdown -->

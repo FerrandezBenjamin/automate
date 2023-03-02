@@ -4,14 +4,15 @@
     box-sizing: border-box;
 }
 
+li {
+    list-style: none;
+}
+
 .allContainer {
     display: flex;
     flex-direction: row;
-}
-
-.container {
-    height: 100em;
     background-color: rgb(83, 83, 103);
+    height: 100em;
 }
 
 .containerNoGroupe {
@@ -38,6 +39,13 @@
     margin-top: 20px;
 }
 
+.containerInNoGroupe>p {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
 .containerCard {
     display: flex;
     justify-content: center;
@@ -48,6 +56,61 @@
     height: 50%;
 
 }
+
+.containerGestion {
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    /* display: flex;
+    justify-content: center; */
+}
+
+.tableGroupe {
+    margin: 10% auto;
+    width: 80%;
+    height: 19%;
+    background-color: rgba(200, 201, 218, 0.99);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+th {
+    text-transform: uppercase;
+    border-bottom: 2px solid grey;
+    padding: 15px;
+    width: 50%;
+    color: white;
+}
+
+td {
+    align-items: center;
+}
+
+tr {
+    border-bottom: 1px solid grey;
+}
+
+tr:first-child {
+    border-top: none;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(134, 143, 152);
+}
+
+
+td,
+tr {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+}
+
 
 .cardContainer>h2 {
     text-align: center;
@@ -113,8 +176,28 @@
     background-color: rgb(214, 37, 9);
 }
 
+.btn-quit-2 {
+    background-color: rgba(214, 36, 9, 0.748);
+}
+
 .btn-join {
     background-color: rgb(22, 165, 41);
+}
+
+.btn_2 {
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 9px;
+    padding-left: 9px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
 }
 
 .container-error {
@@ -122,9 +205,9 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    padding-top:30px;
+    padding-top: 30px;
     background-color: rgb(60 57 88);
-    color:rgb(191 176 176);
+    color: rgb(191 176 176);
     max-height: 80px;
 }
 
@@ -133,15 +216,83 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    padding-top:30px;
-    background-color:rgb(22 165 41 / 63%);
-    color:white;
+    padding-top: 30px;
+    background-color: rgb(22 165 41 / 63%);
+    color: white;
     max-height: 80px;
 }
 
 .error,
 .great {
     letter-spacing: 1px;
-    margin-left:8%;
-    margin-bottom:18px;
+    margin-left: 8%;
+    margin-bottom: 18px;
+}
+
+/**Admin **/
+
+#administration-content {
+    display: flex;
+    flex-direction: row;
+    height: 100em;
+    width: 20%;
+    font-size: 15px;
+    /* background-color: rgb(210, 228, 226); */
+}
+
+.title-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 2px solid white;
+}
+
+.title-admin>p {
+    text-transform: uppercase;
+    font-size: 19px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.nav-admin {
+    color: white;
+    width: 100%;
+    background-color: rgb(65 72 198 / 99%);
+}
+
+.liste-gestion {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 45px;
+    flex-direction: column;
+    padding: 15px;
+}
+
+
+.liste-gestion>li:hover {
+    transition: 0.1s;
+    /* border-radius: 5px; */
+    /* padding: 10px; */
+    /* background-color: rgba(92, 123, 69, 0.99); */
+    color: rgb(213, 182, 182);
+    cursor: pointer;
+}
+
+/*****/
+
+
+.titlePage {
+    padding: 20px;
+    background-color: rgb(65 72 198 / 99%);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.titlePage {
+    color: white;
+}
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GroupController;
@@ -22,14 +23,20 @@ Route::get('/', [HomeController::class, 'index'])
 
 Route::middleware(['auth', 'role:administrator'])->group(function () {
 
-    Route::get('/groupe/nouveau', [GroupController::class, 'new'])
-        ->name('group.new');
+    Route::get('/admin/dashboard', [AdminController::class, 'index_admin'])
+        ->name('admin.dashboard');
 
-    Route::get('/groupe/aleatoire', [GroupController::class, 'random'])
-        ->name('group.random');
+    Route::get('/admin/new_groupe', [GroupController::class, 'new'])
+        ->name('admin.new_groupe');
 
-    Route::get('/groupe/gestion', [GroupController::class, 'gestion'])
-        ->name('group.gestion');
+    Route::get('/admin/groupe_aleatoire', [GroupController::class, 'random'])
+        ->name('admin.random_groupe');
+
+    Route::get('/admin/gestion_groupe', [GroupController::class, 'gestion'])
+        ->name('admin.gestion_groupe');
+
+    Route::get('/admin/delete_groupe', [GroupController::class, 'delete_groupe'])
+        ->name('group.delete');
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
