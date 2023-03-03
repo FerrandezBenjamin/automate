@@ -76,11 +76,21 @@ class AdminController extends Controller
     {
         $values = $req->validate([
             'userID' => 'required',
-            'groupeID' => 'required'
+            'groupeID' => 'nullable'
         ]);
 
-        dd($values);
+        if ($user = User::find($values['userID'])) {
 
-        return back()->with('message', "L'utilisateur a désormais un groupe.");
+            if ($values['groupeID'] == null || $values['groupeID'] == "")
+                $user->groupe_id = null;
+            else
+                $user->groupe_id = $values['groupeID'];
+
+            $user->update();
+        } else {
+            return back()->withErrors("L'utilisateur n'a pas été trouvé.");
+        }
+
+        return back()->with('message', "Modification appliqué.");
     }
 }

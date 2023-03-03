@@ -67,7 +67,7 @@ li {
 
 .tableGroupe {
     margin: 3% auto;
-    width: 60%;
+    width: 80%;
     height: 19%;
     background-color: rgba(200, 201, 218, 0.99);
     border-radius: 15px;
@@ -186,11 +186,11 @@ tr {
 
 .btn_2 {
     border-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     padding-right: 9px;
     padding-left: 9px;
-    width: auto;
+    width: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -313,4 +313,9 @@ tr {
     justify-content: center;
     align-items: center;
     /* text-decoration: underline; */
+}
+
+.selectGroupe {
+    border: none;
+    background-color: none;
 }

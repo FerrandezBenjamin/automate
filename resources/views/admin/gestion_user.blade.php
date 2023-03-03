@@ -16,6 +16,7 @@
                 <tr>
                     <th>Nom</th>
                     <th>Nom de son groupe</th>
+                    <th>Modifier le groupe</th>
                     <th>Supprimer</th>
                 </tr>
             </thead>
@@ -28,6 +29,8 @@
                             @csrf
                             <input type="hidden" name="userID" value="{{$user->id}}" />
                             <select name="groupeID" class="selectGroupe">
+                                <option value="" disabled selected hidden>Selectionner un groupe :</option>
+                                <option value="">Pas de groupe</option>
                                 @foreach($allGroupes as $groupe)
                                 @if($user->groupe !== null)
                                 <option value="{{$groupe->id}}" {!! $groupe->id == $user->groupe->id ? 'selected' : '' !!}>{{$groupe->name}}</option>
@@ -36,6 +39,11 @@
                                 @endif
                                 @endforeach
                             </select>
+
+                    </td>
+
+                    <td>
+                        <button class="btn_2 btn-join" type="submit">Modifier</button>
                         </form>
                     </td>
 
