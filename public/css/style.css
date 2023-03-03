@@ -69,8 +69,8 @@ li {
     margin: 3% auto;
     width: 80%;
     height: 19%;
-    background-color: rgba(200, 201, 218, 0.99);
-    border-radius: 15px;
+    background-color: rgba(224, 225, 236, 0.99);
+    /* border-radius: 15px; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -86,9 +86,6 @@ td {
     align-items: center;
 }
 
-tr {
-    border-bottom: 1px solid grey;
-}
 
 tr:first-child {
     border-top: none;
@@ -99,7 +96,7 @@ tr:last-child {
 }
 
 tr:nth-child(even) {
-    background-color: rgb(134, 143, 152);
+    background-color: rgb(183, 197, 211);
 }
 
 
@@ -300,7 +297,7 @@ tr {
     margin-top: 15px;
     padding: 10px;
     border-radius: 8px;
-    background-color: rgb(228, 233, 236);
+    background-color: rgb(240, 242, 244);
 }
 
 .titleOnContainerAdmin {
