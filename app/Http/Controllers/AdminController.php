@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Groupe;
+use App\Models\Role;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -41,7 +42,13 @@ class AdminController extends Controller
 
     public function admin_role()
     {
-        return view('admin.gestion_role');
+
+        $allRoles = Role::all();
+        $allUser = User::all();
+        return view('admin.gestion_role', compact(
+            'allRoles',
+            'allUser',
+        ));
     }
 
     public function admin_new_groupe()
@@ -75,6 +82,17 @@ class AdminController extends Controller
             $user->delete();
 
         return back()->with('message', "L'utilisateur a bien été supprimé.");
+    }
+    public function admin_delete_role(Request $req)
+    {
+        $values = $req->validate([
+            'roleID' => 'required'
+        ]);
+
+        if ($role = Role::find($values['roleID']))
+            $role->delete();
+
+        return back()->with('message', "Le role a bien été supprimé.");
     }
 
     public function admin_assign_groupe_to_user(Request $req)

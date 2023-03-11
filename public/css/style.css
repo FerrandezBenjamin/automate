@@ -181,6 +181,10 @@ tr {
     background-color: rgb(22, 165, 41);
 }
 
+.btn-add {
+    background-color: blue;
+}
+
 .btn_2 {
     border-radius: 5px;
     padding-top: 8px;
@@ -188,6 +192,8 @@ tr {
     padding-right: 9px;
     padding-left: 9px;
     width: 110px;
+
+    /* max-width: 150px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,6 +201,30 @@ tr {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 13px;
+}
+
+.btn_3 {
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 9px;
+    padding-left: 9px;
+    width: 160px;
+
+    /* max-width: 150px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.absoluteRight {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
 }
 
 .container-error {
@@ -309,6 +339,7 @@ tr {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     /* text-decoration: underline; */
 }
 
