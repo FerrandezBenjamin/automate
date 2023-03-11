@@ -12,11 +12,7 @@
 
     <div class="containerOnAdmin">
         <span class="titleOnContainerAdmin">Vue sur les Roles
-
-
             <a class="btn_3 btn-add absoluteRight" role="button" href="{{url("/admin/create_role")}}"><i class="fas fa-plus fa-sm text-white-50"></i>Créer un rôle</a>
-
-
         </span>
 
         <table class="tableGroupe">

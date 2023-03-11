@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class RoleUserFactory extends Factory
+class RoleUsersFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -13,9 +13,10 @@ class RoleUserFactory extends Factory
      */
     public function definition()
     {
+
         return [
             'user_id' => 1,
-            'role_id' => 1,
+            'role_id' => $this->faker->randomElement([1, 2]),
         ];
     }
 }

@@ -1,7 +1,10 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ubuntu, sans-serif;
 }
 
 li {
@@ -69,6 +72,7 @@ li {
     margin: 3% auto;
     width: 80%;
     height: 19%;
+    padding: 15px;
     background-color: rgba(224, 225, 236, 0.99);
     /* border-radius: 15px; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -161,8 +165,6 @@ tr {
 
 .btn {
     border-radius: 8px;
-    padding: 15px;
-    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,6 +172,8 @@ tr {
 }
 
 .btn-quit {
+    padding: 10px;
+    width: 200px;
     background-color: rgb(214, 37, 9);
 }
 
@@ -178,6 +182,8 @@ tr {
 }
 
 .btn-join {
+    padding: 10px;
+    width: 200px;
     background-color: rgb(22, 165, 41);
 }
 
@@ -209,7 +215,7 @@ tr {
     padding-bottom: 8px;
     padding-right: 9px;
     padding-left: 9px;
-    width: 160px;
+    /* width: 160px; */
 
     /* max-width: 150px; */
     display: flex;
@@ -346,4 +352,49 @@ tr {
 .selectGroupe {
     border: none;
     background-color: none;
+}
+
+.formContainer {
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 1px solid rgb(212, 212, 226);
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.formBen {
+    width: 100%;
+}
+
+.inContainerForm {
+    display: flex;
+    flex-direction: column;
+    /* gap: 25px; */
+}
+
+.centerMe {
+    margin: 0px auto;
+}
+
+.spaceMeTop {
+    margin-top: 35px;
+}
+
+.inputOnform {
+
+    /* font-size: 16px; */
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    /* border-radius: 8px; */
+    /* border: none; */
+
 }

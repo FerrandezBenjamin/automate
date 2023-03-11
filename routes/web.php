@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GroupController;
+// use App\Http\Controllers\RolesController;
+use App\Http\Controllers\UserController;
 use App\Models\Admin;
 
 /*
@@ -30,8 +32,8 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::get('/admin/gestion_user', [AdminController::class, 'admin_user'])
         ->name('admin.gestion_user');
 
-    Route::get('/admin/gestion_role', [AdminController::class, 'admin_role'])
-        ->name('admin.gestion_role');
+    Route::get('/admin/create_user_view', [UserController::class, 'create_user_view'])
+        ->name('admin.create_user');
 
     Route::get('/admin/gestion_groupe', [AdminController::class, 'admin_gestion_groupe'])
         ->name('admin.gestion_groupe');
@@ -41,6 +43,12 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
 
     Route::get('/admin/groupe_aleatoire', [AdminController::class, 'admin_groupe_random'])
         ->name('admin.random_groupe');
+
+    Route::get('/admin/create_role', [AdminController::class, 'admin_create_role'])
+        ->name('admin.create_role');
+
+    Route::post('/admin/create_user', [UserController::class, 'create_user'])
+        ->name('admin.create_user');
 
     Route::post('/admin/delete_groupe', [AdminController::class, 'admin_delete_groupe']);
     Route::post('/admin/delete_user', [AdminController::class, 'admin_delete_user']);

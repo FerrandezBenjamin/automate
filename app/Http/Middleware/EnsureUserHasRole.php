@@ -19,6 +19,5 @@ class EnsureUserHasRole
         if ($request->user()->roles()->where('name', $role)->exists()) return $next($request);
 
         return back()->withErrors(["Désolé, vous n'avez pas les droits nécessaire."]);
-
     }
 }

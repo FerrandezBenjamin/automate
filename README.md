@@ -11,11 +11,7 @@
 - composer dump-autoload
 - php artisan key:generate
 - php artisan optimize:clear
-
-## Make db
 - php artisan migrate 
-
-## Seed User DB 
 - php artisan db:seed
 
 ## Start Laravel App

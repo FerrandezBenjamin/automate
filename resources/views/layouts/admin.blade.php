@@ -48,8 +48,7 @@
                                         <li><a href='{{route("home")}}'>Accueil</a></li>
                                         <li><a href='{{route("admin.new_groupe")}}'>Nouveau groupe</a></li>
                                         <li><a href='{{route("admin.gestion_groupe")}}'>Gestion des groupes</a></li>
-                                        <li><a href='{{route("admin.gestion_user")}}'>Gestion des utilisateurs</a></li>
-                                        <li><a href='{{route("admin.gestion_role")}}'>Gestion des rôles</a></li>
+                                        <li><a href='{{route("admin.gestion_user")}}'>Gestion des utilisateurs</a></li> 
                                     </div>
                                 </div>
                             </div>

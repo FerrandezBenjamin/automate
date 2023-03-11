@@ -13,9 +13,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\Groupe::factory(5)->create();
         // \App\Models\Role::factory(1)->create();
-        \App\Models\RoleUser::factory(1)->create();
-        // \App\Models\User::factory(28)->create();
+
+
+        \App\Models\Role::factory()->create([
+            'name' => 'administrator',
+        ]);
+
+        \App\Models\Role::factory()->create([
+            'name' => 'user',
+        ]);
+
+        \App\Models\User::factory(1)->create();
+
+
+        // \App\Models\RoleUsers::factory(1)->create();
+
+        \App\Models\RoleUsers::factory()->create([
+            'user_id' => 1,
+            'role_id' => 1,
+        ]);
+        \App\Models\RoleUsers::factory()->create([
+            'user_id' => 1,
+            'role_id' => 2,
+        ]);
+
+        \App\Models\Groupe::factory(5)->create();
     }
 }

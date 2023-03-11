@@ -40,15 +40,20 @@ class AdminController extends Controller
         ));
     }
 
-    public function admin_role()
-    {
+    // public function admin_role()
+    // {
 
-        $allRoles = Role::all();
-        $allUser = User::all();
-        return view('admin.gestion_role', compact(
-            'allRoles',
-            'allUser',
-        ));
+    //     $allRoles = Role::all();
+    //     $allUser = User::all();
+    //     return view('admin.gestion_role', compact(
+    //         'allRoles',
+    //         'allUser',
+    //     ));
+    // }
+
+    public function admin_create_role()
+    {
+        return view('admin.create_role');
     }
 
     public function admin_new_groupe()

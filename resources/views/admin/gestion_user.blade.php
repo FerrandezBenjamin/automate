@@ -10,7 +10,8 @@
         <h2>Gestion des utilisateurs</h2>
     </div>
     <div class="containerOnAdmin">
-        <span class="titleOnContainerAdmin">Vue sur utilisateurs</span>
+        <span class="titleOnContainerAdmin">Vue sur utilisateurs
+            <a class="btn_3 btn-add absoluteRight" role="button" href="{{url("/admin/create_user_view")}}"><i class="fas fa-plus fa-sm text-white-50"></i>Créer un utilisateur</a></span>
         <table class="tableGroupe">
             <thead>
                 <tr>
