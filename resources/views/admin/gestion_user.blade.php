@@ -10,8 +10,11 @@
         <h2>Gestion des utilisateurs</h2>
     </div>
     <div class="containerOnAdmin">
-        <span class="titleOnContainerAdmin">Vue sur utilisateurs
-            <a class="btn_3 btn-add absoluteRight" role="button" href="{{url("/admin/create_user_view")}}"><i class="fas fa-plus fa-sm text-white-50"></i>Créer un utilisateur</a></span>
+        <span class="titleOnContainerAdmin">
+            <a class="btn_3 btn-add absoluteRight" role="button" href="{{url("/admin/create_user_view")}}"><i class="fas fa-plus fa-sm text-white-50"></i>Créer un utilisateur</a>
+            <h2>Vue sur utilisateurs</h2>
+            <a class="btn_3 btn-add absoluteLeft" role="button" href="{{url("/admin/create_faker_user")}}"><i class="fas fa-plus fa-sm text-white-50"></i>Génerer des utilisateurs auto</a>
+        </span>
         <table class="tableGroupe">
             <thead>
                 <tr>

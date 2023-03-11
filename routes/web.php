@@ -47,6 +47,9 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::get('/admin/create_role', [AdminController::class, 'admin_create_role'])
         ->name('admin.create_role');
 
+    Route::get('/admin/create_faker_user', [UserController::class, 'create_fake_user'])
+        ->name('admin.create_faker_user');
+
     Route::post('/admin/create_user', [UserController::class, 'create_user'])
         ->name('admin.create_user');
 

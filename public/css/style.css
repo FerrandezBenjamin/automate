@@ -227,11 +227,6 @@ tr {
     font-size: 13px;
 }
 
-.absoluteRight {
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-}
 
 .container-error {
     display: flex;
@@ -343,7 +338,7 @@ tr {
     letter-spacing: 1px;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     /* text-decoration: underline; */

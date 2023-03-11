@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Faker\Factory as FakerFactory;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -38,5 +40,25 @@ class UserController extends Controller
         event(new Registered($user));
 
         return redirect('/admin/dashboard');
+    }
+
+    public function create_fake_user()
+    {
+        //
+        $nbFake = 30;
+
+        for ($i = 0; $i < $nbFake; $i++) {
+            $userFake = new User;
+            $faker = FakerFactory::create('fr_FR');
+
+            $userFake->name = $faker->name;
+            $userFake->email = $faker->unique()->safeEmail();
+            $userFake->email_verified_at = now();
+            $userFake->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+            $userFake->remember_token = Str::random(10);
+            $userFake->save();
+        }
+
+        return back()->with('message', "30 Utilisateurs aléatoire ont été ajoutés.");
     }
 }
