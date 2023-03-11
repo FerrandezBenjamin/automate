@@ -30,6 +30,9 @@ Route::middleware(['auth', 'role:administrator'])->group(function () {
     Route::get('/admin/gestion_user', [AdminController::class, 'admin_user'])
         ->name('admin.gestion_user');
 
+    Route::get('/admin/gestion_role', [AdminController::class, 'admin_role'])
+        ->name('admin.gestion_role');
+
     Route::get('/admin/gestion_groupe', [AdminController::class, 'admin_gestion_groupe'])
         ->name('admin.gestion_groupe');
 

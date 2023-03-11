@@ -39,6 +39,11 @@ class AdminController extends Controller
         ));
     }
 
+    public function admin_role()
+    {
+        return view('admin.gestion_role');
+    }
+
     public function admin_new_groupe()
     {
         return view('admin.new_groupe');

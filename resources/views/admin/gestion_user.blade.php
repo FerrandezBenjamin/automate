@@ -15,7 +15,7 @@
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Nom de son groupe</th>
+                    <th>Groupe</th>
                     <th>Modifier le groupe</th>
                     <th>Supprimer</th>
                 </tr>
