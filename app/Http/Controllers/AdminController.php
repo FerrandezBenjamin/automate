@@ -88,17 +88,17 @@ class AdminController extends Controller
 
         return back()->with('message', "L'utilisateur a bien été supprimé.");
     }
-    public function admin_delete_role(Request $req)
-    {
-        $values = $req->validate([
-            'roleID' => 'required'
-        ]);
+    // public function admin_delete_role(Request $req)
+    // {
+    //     $values = $req->validate([
+    //         'roleID' => 'required'
+    //     ]);
 
-        if ($role = Role::find($values['roleID']))
-            $role->delete();
+    //     if ($role = Role::find($values['roleID']))
+    //         $role->delete();
 
-        return back()->with('message', "Le role a bien été supprimé.");
-    }
+    //     return back()->with('message', "Le role a bien été supprimé.");
+    // }
 
     public function admin_assign_groupe_to_user(Request $req)
     {
