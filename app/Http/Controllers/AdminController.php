@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AskGroupe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,9 +35,12 @@ class AdminController extends Controller
     {
         $allUsers = User::orderBy('name', 'ASC')->orderBy('groupe_id', 'ASC')->get();
         $allGroupes = Groupe::all();
+        $allAsk = AskGroupe::all();
+
         return view('admin.gestion_groupe', compact(
             'allGroupes',
             'allUsers',
+            'allAsk'
         ));
     }
 
@@ -120,5 +124,50 @@ class AdminController extends Controller
         }
 
         return back()->with('message', "Modification appliqué.");
+    }
+
+    public function admin_accept_groupe_to_user(Request $req)
+    {
+
+        if ($req->input('action') === 'accepted') {
+            // Traitement pour accepter la demande
+            $values = $req->validate([
+                'askID' => 'required',
+                'userID' => 'required',
+                'groupeID' => 'nullable'
+            ]);
+            
+            if($ask = AskGroupe::find($values['askID']))
+            {
+                if ($user = User::find($values['userID'])) {
+
+                    //user join groupe
+                    $user->groupe_id = $values['groupeID'];
+                    $user->update();
+
+                    //ask deleted
+                    $ask->delete();
+                } else {
+                    return back()->withErrors("L'utilisateur n'a pas été trouvé.");
+                }
+            } else {
+                return back()->withErrors("La demande n'a pas été trouvé.");
+            }
+            return back()->with('message', "Modification appliqué.");
+
+        } elseif ($req->input('action') === 'refuse') {
+
+            $values = $req->validate([
+                'askID' => 'required',
+            ]);
+
+            if ($ask = AskGroupe::find($values['askID']))
+            {
+                $ask->delete();
+                return back()->with('message', "La demande a été rejeté.");
+            } else {
+                return back()->withErrors("La demande n'a pas été trouvé.");
+            }
+        }
     }
 }

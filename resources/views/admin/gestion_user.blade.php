@@ -36,14 +36,13 @@
                                 <option value="" disabled selected hidden>Selectionner un groupe :</option>
                                 <option value="">Pas de groupe</option>
                                 @foreach($allGroupes as $groupe)
-                                @if($user->groupe !== null)
-                                <option value="{{$groupe->id}}" {!! $groupe->id == $user->groupe->id ? 'selected' : '' !!}>{{$groupe->name}}</option>
-                                @else
-                                <option value="{{$groupe->id}}">{{$groupe->name}}</option>
-                                @endif
+                                    @if($user->groupe !== null)
+                                        <option value="{{$groupe->id}}" {!! $groupe->id == $user->groupe->id ? 'selected' : '' !!}>{{$groupe->name}}</option>
+                                    @else
+                                        <option value="{{$groupe->id}}">{{$groupe->name}}</option>
+                                    @endif
                                 @endforeach
                             </select>
-
                     </td>
 
                     <td>

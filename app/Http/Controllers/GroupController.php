@@ -6,11 +6,32 @@ use Illuminate\Http\Request;
 
 use App\Models\Groupe;
 use App\Models\User;
+use App\Models\AskGroupe;
 
 class GroupController extends Controller
 {
 
 
+
+    // public function join_groupe(Request $req)
+    // {
+    //     $values = $req->validate([
+    //         'groupeID' => 'required',
+    //         'userID' => 'required'
+    //     ]);
+
+    //     if ($group = Groupe::find($values['groupeID'])) {
+
+    //         if ($user = User::find($values['userID'])) {
+    //             $user->groupe_id = $group->id;
+    //             $user->update();
+
+    //             return back()->with('message', 'Vous avez rejoins le groupe : ' . $group->name . ' !');
+    //         }
+    //     } else {
+    //         return back()->withError('Le groupe est inconnu');
+    //     }
+    // }
 
     public function join_groupe(Request $req)
     {
@@ -22,10 +43,14 @@ class GroupController extends Controller
         if ($group = Groupe::find($values['groupeID'])) {
 
             if ($user = User::find($values['userID'])) {
-                $user->groupe_id = $group->id;
-                $user->update();
 
-                return back()->with('message', 'Vous avez rejoins le groupe : ' . $group->name . ' !');
+                $askJoinGroupe = New AskGroupe;
+
+                $askJoinGroupe->user_id = $user->id;
+                $askJoinGroupe->groupe_id = $group->id;
+                $askJoinGroupe->save();
+
+                return back()->with('message', 'Votre demande pour rejoindre le groupe : ' . $group->name . ' a bien été prise en compte !');
             }
         } else {
             return back()->withError('Le groupe est inconnu');

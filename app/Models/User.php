@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Groupe;
+use App\Models\AskGroupe;
 
 class User extends Authenticatable
 {
@@ -59,5 +60,10 @@ class User extends Authenticatable
     public function groupe()
     {
         return $this->hasOne(Groupe::class, "id", "groupe_id");
+    }
+
+    public function askGroupe()
+    {
+        return $this->hasOne(AskGroupe::class, "user_id", "id");
     }
 }
