@@ -37,7 +37,6 @@ class GroupController extends Controller
     {
         $values = $req->validate([
             'groupeID' => 'required',
-            'userID' => 'required'
         ]);
 
 
