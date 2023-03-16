@@ -40,17 +40,30 @@ class GroupController extends Controller
             'userID' => 'required'
         ]);
 
+
+        
+
         if ($group = Groupe::find($values['groupeID'])) {
 
-            if ($user = User::find($values['userID'])) {
+            if (auth()->user()->roles()->where('name', 'administrator')->exists()) {
+                $user = Auth()->user();
+                $user->groupe_id = $values['groupeID'];
+                $user->save();
+            
+                return back()->with('message', 'Vous avez rejoint le groupe : ' . $group->name . ' !');
+            } else {
 
-                $askJoinGroupe = New AskGroupe;
 
-                $askJoinGroupe->user_id = $user->id;
-                $askJoinGroupe->groupe_id = $group->id;
-                $askJoinGroupe->save();
+                if ($user = User::find($values['userID'])) {
 
-                return back()->with('message', 'Votre demande pour rejoindre le groupe : ' . $group->name . ' a bien été prise en compte !');
+                    $askJoinGroupe = New AskGroupe;
+
+                    $askJoinGroupe->user_id = $user->id;
+                    $askJoinGroupe->groupe_id = $group->id;
+                    $askJoinGroupe->save();
+
+                    return back()->with('message', 'Votre demande pour rejoindre le groupe : ' . $group->name . ' a bien été prise en compte !');
+                }
             }
         } else {
             return back()->withError('Le groupe est inconnu');
