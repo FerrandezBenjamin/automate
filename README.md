@@ -7,7 +7,7 @@
 ## Do this after download app
 - npm install
 - npm run dev
-- composer update
+- composer install --ignore-platform-reqs
 - composer dump-autoload
 - php artisan key:generate
 - php artisan optimize:clear
